@@ -1,0 +1,147 @@
+/* =========================================================
+   IMPORTACIÓN DE FUENTES DESDE GOOGLE FONTS
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap');
+
+/* =========================================================
+   RESET Y VARIABLES DE TEMA GAMER
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0d0e15;
+    --card-bg: rgba(22, 27, 46, 0.75);
+    --primary-neon: #00f3ff;   /* Cyan Cyberpunk */
+    --secondary-neon: #ff0055; /* Rosa/Rojo Neón */
+    --accent-glow: #7928ca;    /* Morado Neón */
+    --text-color: #e0e6ed;
+    --text-muted: #8a99ad;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(121, 40, 202, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 243, 255, 0.1), transparent 40%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   CONTENEDOR TIPO LINKTREE
+   ========================================================= */
+.content {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8),
+                0 0 15px rgba(0, 243, 255, 0.15);
+}
+
+/* =========================================================
+   HEADER & TÍTULO CON FUENTE ORBITRON
+   ========================================================= */
+.title h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-neon),
+                 0 0 20px var(--primary-neon);
+    margin-bottom: 8px;
+}
+
+.title p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+/* =========================================================
+   Navegación y Botones Interactivos
+   ========================================================= */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.item-list {
+    width: 100%;
+}
+
+.item-list a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-color);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.08));
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de luz interior al pasar el cursor (Hover) */
+.item-list a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.4), transparent);
+    transition: left 0.5s ease-in-out;
+}
+
+.item-list a:hover::before {
+    left: 100%;
+}
+
+/* Interacción Principal del Botón */
+.item-list a:hover {
+    color: #fff;
+    border-color: var(--primary-neon);
+    background: rgba(0, 243, 255, 0.15);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.5),
+                inset 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+/* Click Activo (Pulsación Gamer) */
+.item-list a:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.8);
+    border-color: var(--secondary-neon);
+}
